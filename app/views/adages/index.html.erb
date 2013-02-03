@@ -3,7 +3,6 @@
   <% @adages.each do |adage| %>
   <div class = "adage">
 
-
     <p><span class="author_lastname">
       <% if adage.author.end_with?("Jr.", "Sr.") %>
         <%= link_to adage.author.split.fetch(-2), adage_url(adage) %>

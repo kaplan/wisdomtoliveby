@@ -27,7 +27,7 @@ class AdagesController < ApplicationController
 
   def update
     @adage = Adage.find(params[:id])
-    if @adage.update_paramaters(params[:adage])
+    if @adage.update_attributes(params[:adage])
       redirect_to adages_url, :notice => "adage updated."
     else
       render 'edit'

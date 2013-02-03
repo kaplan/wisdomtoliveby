@@ -14,8 +14,8 @@ Wisdomtoliveby::Application.routes.draw do
   get "adages/:id" => "Adages#show", :as => "adage"
 
   # Update
-  get "adages/:id/edit" => "Adages/#edit", :as => "adage"
-  put "adages/:id" => "Adages/#updage", :as => "adage"
+  get "adages/:id/edit" => "Adages#edit", :as => "edit_adage"
+  put "adages/:id" => "Adages#update", :as => "adage"
 
   # Delete
   delete "adages/:id" => "Adages#delete", :as => "adage"
