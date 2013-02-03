@@ -1,0 +1,27 @@
+<ul>
+<% @adage.errors.full_messages.each do |message| %>
+  <li><%= message %></li>
+<% end %>
+</ul>
+
+<ul class="adage_form">
+  <%= form_for @adage do |f| %>
+    <div>
+      <%= f.label :content, "adage text" %>
+      <%= f.text_area :content %>
+    </div>
+    <div>
+      <%= f.label :topic, "topic" %>
+      <%= f.text_field :topic, :class => "adage_input" %>
+    </div>
+    <div>
+      <%= f.label :author, "author" %>
+      <%= f.text_field :author, :class => "adage_input" %>
+    </div>
+    <div>
+      <%= f.label :profession, "profession" %>
+      <%= f.text_field :profession, :class => "adage_input", :autocomplete => "false" %>
+    </div>
+    <%= f.submit %>
+  <% end %>
+</ul>

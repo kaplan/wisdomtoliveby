@@ -1,0 +1,19 @@
+<!-- <h2>Adages</h2> -->
+<div id = "adage_index">
+  <% @adages.each do |adage| %>
+  <div class = "adage">
+
+
+    <p><span class="author_lastname">
+      <% if adage.author.end_with?("Jr.", "Sr.") %>
+        <%= link_to adage.author.split.fetch(-2), adage_url(adage) %>
+      <% else %>
+        <%= link_to adage.author.split.last, adage_url(adage) %>
+      <% end %>
+    </span> On <%= adage.topic %></p>
+
+    <p><%= adage.content %></p>
+    <p class="adage_author"><span class="author_fullname"><%= adage.author %>,</span> <%= adage.profession %> </p>
+  </div>
+  <% end %>
+</div>
